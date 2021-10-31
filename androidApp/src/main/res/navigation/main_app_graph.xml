@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_app_graph"
+    app:startDestination="@id/patientListFragment">
+
+    <fragment
+        android:id="@+id/hospitalFragment"
+        android:name="com.pru.kmmskelton.android.presentation.hospital.HospitalFragment"
+        android:label="fragment_hospital"
+        tools:layout="@layout/fragment_hospital"/>
+    <dialog
+        android:id="@+id/addPatient"
+        android:name="com.pru.kmmskelton.android.presentation.addPatient.AddPatientFragment"
+        android:label="fragment_add_patient"
+        tools:layout="@layout/fragment_add_patient" />
+    <fragment
+        android:id="@+id/patientListFragment"
+        android:name="com.pru.kmmskelton.android.presentation.patient_list.PatientListFragment"
+        android:label="fragment_patient_list"
+        tools:layout="@layout/fragment_patient_list" >
+        <action
+            android:id="@+id/action_patientListFragment_to_addPatient"
+            app:destination="@id/addPatient" />
+    </fragment>
+</navigation>

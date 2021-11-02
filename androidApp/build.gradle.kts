@@ -34,7 +34,6 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.3.6")
 
 //    implementation("io.insert-koin:koin-core:3.1.3")
-    implementation("io.ktor:ktor-client-okhttp:1.6.2")
 
     //Hilt Dagger
     implementation("com.google.dagger:hilt-android:2.38.1")

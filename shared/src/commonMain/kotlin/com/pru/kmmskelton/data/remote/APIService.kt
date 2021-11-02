@@ -3,16 +3,16 @@ package com.pru.kmmskelton.data.remote
 import com.pru.kmmskelton.constants.Constants
 import com.pru.kmmskelton.data.models.response.BaseResponse
 import com.pru.kmmskelton.data.models.response.Patient
-import io.ktor.client.*
+import com.pru.kmmskelton.httpClient
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 
-class APIService (val httpClient: HttpClient) {
+class APIService {
 
-    /*private val httpClient = HttpClient {
+    private val httpClient = httpClient {
         install(Logging) {
             logger = Logger.DEFAULT
             level = LogLevel.ALL
@@ -24,8 +24,7 @@ class APIService (val httpClient: HttpClient) {
             }
             serializer = KotlinxSerializer()
         }
-
-    }*/
+    }
 
     @Throws(Exception::class)
     suspend fun getAllPatients(): BaseResponse<List<Patient>> {

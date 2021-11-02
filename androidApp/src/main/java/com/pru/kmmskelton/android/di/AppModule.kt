@@ -1,8 +1,5 @@
 package com.pru.kmmskelton.android.di
 
-import android.os.Build
-import com.pru.kmmskelton.BuildConfig
-import com.pru.kmmskelton.androidHttpClient
 import com.pru.kmmskelton.data.remote.APIService
 import com.pru.kmmskelton.data.repository.RepositorySdk
 import com.pru.kmmskelton.domain.usecases.PatientUseCase
@@ -18,7 +15,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAPIService(): APIService = APIService(androidHttpClient(BuildConfig.DEBUG))
+    fun provideAPIService(): APIService = APIService()
 
     @Singleton
     @Provides
